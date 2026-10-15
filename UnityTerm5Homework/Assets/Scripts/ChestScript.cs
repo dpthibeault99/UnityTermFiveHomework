@@ -16,6 +16,7 @@ public class ChestScript : MonoBehaviour
         {
             Debug.Log("Player hit chest");
             notification.text = "Player hit chest";
+            StartCoroutine(resetNotification());
         }
     }
 
