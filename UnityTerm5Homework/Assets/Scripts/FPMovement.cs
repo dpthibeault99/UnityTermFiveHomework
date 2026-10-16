@@ -13,6 +13,8 @@ public class FPMovement : MonoBehaviour
     public float jumpStrength = 9.0f;
     float velocity;
     float gravityMultiplier = 3.0f;
+    public bool canDoubleJump = false;
+    public bool doubleJumpUsed = false;
     
 
     CharacterController controller;
@@ -35,12 +37,18 @@ public class FPMovement : MonoBehaviour
         if(IsGrounded() && velocity < 0)
         {
             velocity = -1;
+            doubleJumpUsed = false;
         }
         else
         {
             velocity += gravity * gravityMultiplier * Time.deltaTime;
         }
 
+        if(canDoubleJump)
+        {
+            Debug.Log("FPMovemnt can jump true");
+
+        }
 
         movement.y = velocity;
 
@@ -55,16 +63,41 @@ public class FPMovement : MonoBehaviour
         v = ctx.ReadValue<Vector2>().y;
     }
 
+    //public void Jump(InputAction.CallbackContext ctx)
+    //{
+
+    //    if (!IsGrounded())
+    //    {
+    //        //doubleJumpUsed = true;
+    //        return;
+    //    }
+
+    //    if (ctx.performed && !doubleJumpUsed)
+    //    {
+    //        velocity = jumpStrength;
+    //    }
+
+    //    if (ctx.performed && canDoubleJump && velocity >=0.1f && !controller.isGrounded /*&&  !IsGrounded*/ )
+    //    {
+    //        velocity += jumpStrength;
+    //        //canDoubleJump = false;
+    //        doubleJumpUsed = true;
+    //    }
+    //}
+
     public void Jump(InputAction.CallbackContext ctx)
     {
-        if (!IsGrounded())
-        {
-            return;
-        }
-
-        if (ctx.performed)
+        if (!ctx.performed)return; 
+        // i struglled with this for a while
+        // had to
+        if (IsGrounded())
         {
             velocity = jumpStrength;
+        }
+        else if (canDoubleJump && !doubleJumpUsed)
+        {
+            velocity = jumpStrength;
+            doubleJumpUsed = true;
         }
     }
 

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PickupItem : MonoBehaviour
 {
@@ -38,8 +40,16 @@ public class PickupItem : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            collector.ItemCollect();
-            Destroy(gameObject);
+            if (!collector.allItemsCollected)
+            {
+                collector.ItemCollect();
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("YouWin");
+               // SceneManager.LoadScene("YouWin");
+            }
         }
     }
 }

@@ -8,11 +8,15 @@ public class ItemCollector : MonoBehaviour
 {
     public int itemsCollected, itemsInLevel;
     public TMP_Text itemHUD;
+    public bool allItemsCollected = false;
+    FPMovement fP;
 
     // Start is called before the first frame update
     void Start()
     {
         itemHUD.text = $"Coins {itemsCollected}/{itemsInLevel}";
+        fP = GetComponent<FPMovement>();
+        
     }
 
     public void ItemCollect()
@@ -22,8 +26,10 @@ public class ItemCollector : MonoBehaviour
 
         if (itemsCollected >= itemsInLevel)
         {
-            //Change Scenes
-            StartCoroutine(GameOver());
+            itemHUD.text = $"{itemsCollected} Coins Collected!";
+            allItemsCollected = true ;
+            //fP.canDoubleJump = true ;
+
         }
     }
 
