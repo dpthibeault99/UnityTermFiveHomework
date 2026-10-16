@@ -48,7 +48,7 @@ public class PickupItem : MonoBehaviour
             else
             {
                 Debug.Log("YouWin");
-               // SceneManager.LoadScene("YouWin");
+                SceneManager.LoadScene("YouWin");
             }
         }
     }
