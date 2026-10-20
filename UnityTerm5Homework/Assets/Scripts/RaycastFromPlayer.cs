@@ -33,16 +33,17 @@ public class RaycastFromPlayer : MonoBehaviour
     {
         Debug.DrawRay(transform.position, transform.forward * raycastDistance, Color.green);
 
-        
-        //if (redBox && blueBox)
-        //{
-        //    doorButton.GetComponent<Renderer>().material.color = Color.green;
-        //    doorUnlocked = true;
-        //}
-        //else {
-        //    doorButton.GetComponent<Renderer>().material.color = Color.red;
-        //    doorUnlocked = false;
-        //}
+
+        if (redBox && blueBox)
+        {
+            doorButton.GetComponent<Renderer>().material.color = Color.green;
+            doorUnlocked = true;
+        }
+        else
+        {
+            doorButton.GetComponent<Renderer>().material.color = Color.red;
+            doorUnlocked = false;
+        }
 
         // Clear the previous highlight and prompt.
         if (hitObj != null)
@@ -62,9 +63,9 @@ public class RaycastFromPlayer : MonoBehaviour
             bool canPickUp = hit.collider.CompareTag("PickupItem")
                              && !holdingItem;
 
-            //bool canUseDoor = hit.collider.CompareTag("DoorButton") && doorUnlocked;
+            bool canUseDoor = hit.collider.CompareTag("DoorButton") && doorUnlocked;
 
-            if (canPickUp /*|| canUseDoor*/)
+            if (canPickUp || canUseDoor)
             {
                 hitObj = hit.collider.GetComponent<MeshRenderer>();
                 hitObj.materials[1].SetFloat("_Scale", 1.03f);
