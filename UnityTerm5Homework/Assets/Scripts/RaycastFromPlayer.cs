@@ -54,25 +54,24 @@ public class RaycastFromPlayer : MonoBehaviour
         //messageBox.SetActive(false);
 
         //// Check what the player is looking at now.
-        //RaycastHit hit;
+        RaycastHit hit;
 
-        //if (Physics.Raycast(transform.position, transform.forward,
-        //    out hit, raycastDistance))
-        //{
-        //    bool canPickUp = hit.collider.CompareTag("PickupItem")
-        //                     && !holdingItem;
+        if (Physics.Raycast(transform.position, transform.forward,
+            out hit, raycastDistance))
+        {
+            bool canPickUp = hit.collider.CompareTag("PickupItem")
+                             && !holdingItem;
 
-        //    bool canUseDoor = hit.collider.CompareTag("DoorButton")
-        //                      && doorUnlocked;
+            //bool canUseDoor = hit.collider.CompareTag("DoorButton") && doorUnlocked;
 
-        //    if (canPickUp || canUseDoor)
-        //    {
-        //        hitObj = hit.collider.GetComponent<MeshRenderer>();
-        //        hitObj.materials[1].SetFloat("_Scale", 1.03f);
-        //    }
+            if (canPickUp /*|| canUseDoor*/)
+            {
+                hitObj = hit.collider.GetComponent<MeshRenderer>();
+                hitObj.materials[1].SetFloat("_Scale", 1.03f);
+            }
 
-        //    messageBox.SetActive(canUseDoor);
-        //}
+            //messageBox.SetActive(canUseDoor);
+        }
 
     }
 
