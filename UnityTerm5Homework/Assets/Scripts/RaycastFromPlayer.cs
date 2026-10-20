@@ -34,15 +34,15 @@ public class RaycastFromPlayer : MonoBehaviour
         Debug.DrawRay(transform.position, transform.forward * raycastDistance, Color.green);
 
         
-        if (redBox && blueBox)
-        {
-            doorButton.GetComponent<Renderer>().material.color = Color.green;
-            doorUnlocked = true;
-        }
-        else {
-            doorButton.GetComponent<Renderer>().material.color = Color.red;
-            doorUnlocked = false;
-        }
+        //if (redBox && blueBox)
+        //{
+        //    doorButton.GetComponent<Renderer>().material.color = Color.green;
+        //    doorUnlocked = true;
+        //}
+        //else {
+        //    doorButton.GetComponent<Renderer>().material.color = Color.red;
+        //    doorUnlocked = false;
+        //}
 
         // Clear the previous highlight and prompt.
         if (hitObj != null)
@@ -51,28 +51,28 @@ public class RaycastFromPlayer : MonoBehaviour
             hitObj = null;
         }
 
-        messageBox.SetActive(false);
+        //messageBox.SetActive(false);
 
-        // Check what the player is looking at now.
-        RaycastHit hit;
+        //// Check what the player is looking at now.
+        //RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward,
-            out hit, raycastDistance))
-        {
-            bool canPickUp = hit.collider.CompareTag("PickupItem")
-                             && !holdingItem;
+        //if (Physics.Raycast(transform.position, transform.forward,
+        //    out hit, raycastDistance))
+        //{
+        //    bool canPickUp = hit.collider.CompareTag("PickupItem")
+        //                     && !holdingItem;
 
-            bool canUseDoor = hit.collider.CompareTag("DoorButton")
-                              && doorUnlocked;
+        //    bool canUseDoor = hit.collider.CompareTag("DoorButton")
+        //                      && doorUnlocked;
 
-            if (canPickUp || canUseDoor)
-            {
-                hitObj = hit.collider.GetComponent<MeshRenderer>();
-                hitObj.materials[1].SetFloat("_Scale", 1.03f);
-            }
+        //    if (canPickUp || canUseDoor)
+        //    {
+        //        hitObj = hit.collider.GetComponent<MeshRenderer>();
+        //        hitObj.materials[1].SetFloat("_Scale", 1.03f);
+        //    }
 
-            messageBox.SetActive(canUseDoor);
-        }
+        //    messageBox.SetActive(canUseDoor);
+        //}
 
     }
 
@@ -105,23 +105,23 @@ public class RaycastFromPlayer : MonoBehaviour
         }
     }
 
-    public void InteractableObject(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed)
-        {
+    //public void InteractableObject(InputAction.CallbackContext ctx)
+    //{
+    //    if (ctx.performed)
+    //    {
 
-            RaycastHit hit;
+    //        RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, transform.forward, out hit, raycastDistance))
-            {
+    //        if (Physics.Raycast(transform.position, transform.forward, out hit, raycastDistance))
+    //        {
         
-                if (hit.collider.CompareTag("DoorButton") && doorUnlocked)
-                {
-                    leftDoor.SetTrigger("OpenDoor");
-                    rightDoor.SetTrigger("OpenDoor");
-                }
+    //            if (hit.collider.CompareTag("DoorButton") && doorUnlocked)
+    //            {
+    //                leftDoor.SetTrigger("OpenDoor");
+    //                rightDoor.SetTrigger("OpenDoor");
+    //            }
 
-            }
-        }
-    }
+    //        }
+    //    }
+    //}
 }
