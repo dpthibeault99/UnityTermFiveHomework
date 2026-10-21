@@ -52,7 +52,7 @@ public class RaycastFromPlayer : MonoBehaviour
             hitObj = null;
         }
 
-        //messageBox.SetActive(false);
+        messageBox.SetActive(false);
 
         //// Check what the player is looking at now.
         RaycastHit hit;
@@ -71,7 +71,7 @@ public class RaycastFromPlayer : MonoBehaviour
                 hitObj.materials[1].SetFloat("_Scale", 1.03f);
             }
 
-            //messageBox.SetActive(canUseDoor);
+            messageBox.SetActive(canUseDoor);
         }
 
     }
@@ -105,23 +105,23 @@ public class RaycastFromPlayer : MonoBehaviour
         }
     }
 
-    //public void InteractableObject(InputAction.CallbackContext ctx)
-    //{
-    //    if (ctx.performed)
-    //    {
+    public void InteractableObject(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
 
-    //        RaycastHit hit;
+            RaycastHit hit;
 
-    //        if (Physics.Raycast(transform.position, transform.forward, out hit, raycastDistance))
-    //        {
-        
-    //            if (hit.collider.CompareTag("DoorButton") && doorUnlocked)
-    //            {
-    //                leftDoor.SetTrigger("OpenDoor");
-    //                rightDoor.SetTrigger("OpenDoor");
-    //            }
+            if (Physics.Raycast(transform.position, transform.forward, out hit, raycastDistance))
+            {
 
-    //        }
-    //    }
-    //}
+                if (hit.collider.CompareTag("DoorButton") && doorUnlocked)
+                {
+                    leftDoor.SetTrigger("OpenDoor");
+                    rightDoor.SetTrigger("OpenDoor");
+                }
+
+            }
+        }
+    }
 }
