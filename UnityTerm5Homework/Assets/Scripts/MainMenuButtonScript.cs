@@ -11,10 +11,15 @@ public class MainMenuButtonScript : MonoBehaviour
         Cursor.visible = true; 
     }
 
-    public void startGame()
+    public void startWeek1()
     {
-        Debug.Log("start game");
+        Debug.Log("start week1");
         SceneManager.LoadScene("GameScene");
+    }
+    public void startWeek2()
+    {
+        Debug.Log("start week2");
+        SceneManager.LoadScene("PuzzleScene");
     }
 
     public void endGame()
