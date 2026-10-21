@@ -9,6 +9,7 @@ public class MainMenuButtonScript : MonoBehaviour
         // dosent interfere with mouse look
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true; 
+        // study this
     }
 
     public void startWeek1()
