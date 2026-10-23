@@ -87,10 +87,10 @@ public class FPMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext ctx)
     {
-        if (!ctx.performed)return; 
-        // i struglled with this for a while
-        // had to
-        if (IsGrounded())
+        if (!ctx.performed)return;
+            // i struglled with this for a while
+            // had to
+            if (IsGrounded())
         {
             velocity = jumpStrength;
         }
