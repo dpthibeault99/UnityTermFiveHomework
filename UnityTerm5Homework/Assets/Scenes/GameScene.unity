@@ -1564,6 +1564,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 108006808434746625, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 937804059}
     - target: {fileID: 1570930561997185630, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Name
       value: coin (9)
@@ -1572,6 +1576,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1404497208}
+    - target: {fileID: 6632763442735653304, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1321
+      objectReference: {fileID: 0}
     - target: {fileID: 8451088194802843109, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2653,6 +2661,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 108006808434746625, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 937804059}
     - target: {fileID: 1570930561997185630, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Name
       value: coin (2)
@@ -2663,7 +2675,7 @@ PrefabInstance:
       objectReference: {fileID: 256465895}
     - target: {fileID: 6632763442735653304, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1315
+      value: 1321
       objectReference: {fileID: 0}
     - target: {fileID: 8451088194802843109, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Mesh
@@ -2876,6 +2888,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 108006808434746625, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 937804059}
     - target: {fileID: 1570930561997185630, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Name
       value: coin (1)
@@ -2886,7 +2902,7 @@ PrefabInstance:
       objectReference: {fileID: 626863887}
     - target: {fileID: 6632763442735653304, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1315
+      value: 1321
       objectReference: {fileID: 0}
     - target: {fileID: 8451088194802843109, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Mesh
@@ -2945,6 +2961,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 108006808434746625, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 937804059}
     - target: {fileID: 1570930561997185630, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Name
       value: coin (3)
@@ -2955,7 +2975,7 @@ PrefabInstance:
       objectReference: {fileID: 1760740755}
     - target: {fileID: 6632763442735653304, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1315
+      value: 1321
       objectReference: {fileID: 0}
     - target: {fileID: 8451088194802843109, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Mesh
@@ -3370,6 +3390,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 108006808434746625, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 937804059}
     - target: {fileID: 1570930561997185630, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Name
       value: coin (5)
@@ -3380,7 +3404,7 @@ PrefabInstance:
       objectReference: {fileID: 1930731416}
     - target: {fileID: 6632763442735653304, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1315
+      value: 1321
       objectReference: {fileID: 0}
     - target: {fileID: 8451088194802843109, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Mesh
@@ -8427,6 +8451,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 108006808434746625, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 937804059}
     - target: {fileID: 1570930561997185630, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Name
       value: coin (6)
@@ -8435,6 +8463,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 303579212}
+    - target: {fileID: 6632763442735653304, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1321
+      objectReference: {fileID: 0}
     - target: {fileID: 8451088194802843109, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -8514,6 +8546,135 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2116859303}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &937804058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 937804060}
+  - component: {fileID: 937804059}
+  m_Layer: 0
+  m_Name: audioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &937804059
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937804058}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: b133adfe4a129074d95dbebf70784aff, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &937804060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937804058}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.72603, y: -500, z: 1.49736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1045286829
 GameObject:
@@ -8640,7 +8801,7 @@ PrefabInstance:
       objectReference: {fileID: 708610725}
     - target: {fileID: 6632763442735653304, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1315
+      value: 1321
       objectReference: {fileID: 0}
     - target: {fileID: 8451088194802843109, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Mesh
@@ -10280,6 +10441,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2116859303}
     m_Modifications:
+    - target: {fileID: 108006808434746625, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 937804059}
     - target: {fileID: 1570930561997185630, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Name
       value: movingCoin
@@ -10288,6 +10453,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 125562205}
+    - target: {fileID: 6632763442735653304, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1321
+      objectReference: {fileID: 0}
     - target: {fileID: 8451088194802843109, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -11780,6 +11949,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 108006808434746625, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 937804059}
     - target: {fileID: 1570930561997185630, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Name
       value: coin (4)
@@ -11790,7 +11963,7 @@ PrefabInstance:
       objectReference: {fileID: 1814653777}
     - target: {fileID: 6632763442735653304, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1315
+      value: 1321
       objectReference: {fileID: 0}
     - target: {fileID: 8451088194802843109, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Mesh
@@ -14043,6 +14216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe22464587603d6489014572c40f5457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupItem
+  source: {fileID: 0}
+  clip: {fileID: 0}
   rotationSpeed: 50
   rotationStart: {x: 0, y: 0, z: 100}
 --- !u!135 &2043197266
@@ -14074,6 +14249,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 108006808434746625, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 937804059}
     - target: {fileID: 1570930561997185630, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Name
       value: coin (8)
@@ -14082,6 +14261,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 112711085}
+    - target: {fileID: 6632763442735653304, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1321
+      objectReference: {fileID: 0}
     - target: {fileID: 8451088194802843109, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -15985,6 +16168,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 108006808434746625, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 937804059}
     - target: {fileID: 1570930561997185630, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Name
       value: coin
@@ -15995,7 +16182,7 @@ PrefabInstance:
       objectReference: {fileID: 828158235}
     - target: {fileID: 6632763442735653304, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1315
+      value: 1321
       objectReference: {fileID: 0}
     - target: {fileID: 8451088194802843109, guid: f2cb179f033a30b4a9c0a86a2218364d, type: 3}
       propertyPath: m_Mesh
@@ -16098,6 +16285,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7049603963993691154, guid: 58bfceeb213890f4cacaba993cda7bd8, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 937804059}
+    - target: {fileID: 7049603963993691154, guid: 58bfceeb213890f4cacaba993cda7bd8, type: 3}
+      propertyPath: clips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049603963993691154, guid: 58bfceeb213890f4cacaba993cda7bd8, type: 3}
+      propertyPath: 'clips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: de17505ea13a4af45bdfb8bf9eb4f44a, type: 3}
+    - target: {fileID: 7049603963993691154, guid: 58bfceeb213890f4cacaba993cda7bd8, type: 3}
+      propertyPath: 'clips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5175379b714aa9f48b0d0919b3670791, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16136,3 +16339,4 @@ SceneRoots:
   - {fileID: 2043197264}
   - {fileID: 2116859303}
   - {fileID: 1275327894}
+  - {fileID: 937804060}

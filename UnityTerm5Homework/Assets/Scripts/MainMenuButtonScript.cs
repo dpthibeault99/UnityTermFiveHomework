@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButtonScript : MonoBehaviour
 {
+    public AudioSource source;
+    public AudioClip clip;
     private void Start()
     {
         // Cursor state survives scene changes

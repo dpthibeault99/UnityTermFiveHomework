@@ -1065,7 +1065,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1312
+  m_VersionIndex: 1318
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1166,6 +1166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe22464587603d6489014572c40f5457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupItem
+  source: {fileID: 0}
+  clip: {fileID: 8300000, guid: 2a99e1798100838499f16dbc3babecb6, type: 3}
   rotationSpeed: 50
   rotationStart: {x: 0, y: 0, z: 100}
 --- !u!135 &8829051123714781314

@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 
 public class PickupItem : MonoBehaviour
 {
     ItemCollector collector;
-   
+    public AudioSource source;
+    public AudioClip clip;
+
     [SerializeField]
     float rotationSpeed = 50f;
     [SerializeField] private Vector3 rotationStart = new Vector3(0, 0,100);
@@ -28,6 +31,7 @@ public class PickupItem : MonoBehaviour
     void Start()
     {
         collector = GameObject.Find("CoinHUD").GetComponent<ItemCollector>();
+        //source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,6 +44,8 @@ public class PickupItem : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+           source.PlayOneShot(clip,1.0f);
+
             if (!collector.allItemsCollected)
             {
                 collector.ItemCollect();

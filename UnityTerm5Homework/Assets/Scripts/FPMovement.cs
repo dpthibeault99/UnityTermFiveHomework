@@ -15,7 +15,9 @@ public class FPMovement : MonoBehaviour
     float gravityMultiplier = 3.0f;
     public bool canDoubleJump = false;
     public bool doubleJumpUsed = false;
-    
+    public AudioSource source;
+    public AudioClip[] clips;
+
 
     CharacterController controller;
 
@@ -38,6 +40,7 @@ public class FPMovement : MonoBehaviour
         {
             velocity = -1;
             doubleJumpUsed = false;
+      
         }
         else
         {
@@ -89,15 +92,18 @@ public class FPMovement : MonoBehaviour
     {
         if (!ctx.performed)return;
             // i struglled with this for a while
-            // had to
-            if (IsGrounded())
+        
+        if (IsGrounded())
         {
             velocity = jumpStrength;
+            source.PlayOneShot(clips[0], 0.5f);
         }
         else if (canDoubleJump && !doubleJumpUsed)
         {
             velocity = jumpStrength;
             doubleJumpUsed = true;
+            source.PlayOneShot(clips[1], 0.5f);
+
         }
     }
 
