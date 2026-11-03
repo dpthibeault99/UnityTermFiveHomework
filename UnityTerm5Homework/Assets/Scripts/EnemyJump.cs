@@ -40,11 +40,18 @@ public class EnemyJump : MonoBehaviour
             jumpRotation = Quaternion.LookRotation(direction, Vector3.up);
 
         bool previousUpdateRotation = agent.updateRotation;
+        int jumpLayer = anim != null ? anim.GetLayerIndex("Jump") : -1;
         agent.updateRotation = false;
         try
         {
             agent.transform.rotation = jumpRotation;
-            anim.SetTrigger("Jump");
+            if (jumpLayer >= 0)
+            {
+                // Start from Empty even if a second link follows the first immediately.
+                anim.Play("Jump.Empty", jumpLayer, 0f);
+                anim.SetLayerWeight(jumpLayer, 1f);
+                anim.SetTrigger("Jump");
+            }
             float time = 0f;
             duration = Mathf.Max(0.01f, duration);
 
@@ -67,6 +74,11 @@ public class EnemyJump : MonoBehaviour
         }
         finally
         {
+            if (anim != null && jumpLayer >= 0)
+            {
+                anim.ResetTrigger("Jump");
+                anim.SetLayerWeight(jumpLayer, 0f);
+            }
             if (agent != null)
                 agent.updateRotation = previousUpdateRotation;
         }

@@ -152,15 +152,15 @@ public class PatrolEnemy : MonoBehaviour
 
         // Wait for the existing animation state, then let one swing complete.
         float entryDeadline = Time.time + 2f;
-        while (!anim.GetCurrentAnimatorStateInfo(attackLayer).IsName("Standing Melee Attack Horizontal")
+        while (!anim.GetCurrentAnimatorStateInfo(attackLayer).IsName("Attack")
                && Time.time < entryDeadline)
             yield return null;
 
         AnimatorStateInfo state = anim.GetCurrentAnimatorStateInfo(attackLayer);
-        if (!state.IsName("Standing Melee Attack Horizontal"))
+        if (!state.IsName("Attack"))
             Debug.LogWarning("Attack animation did not start. Check the Attack layer and transitions.", this);
 
-        while (state.IsName("Standing Melee Attack Horizontal") && state.normalizedTime < 1f)
+        while (state.IsName("Attack") && state.normalizedTime < 1f)
         {
             yield return null;
             state = anim.GetCurrentAnimatorStateInfo(attackLayer);
@@ -169,7 +169,7 @@ public class PatrolEnemy : MonoBehaviour
         anim.SetBool("Attack", false);
         float exitDeadline = Time.time + 2f;
         while ((anim.IsInTransition(attackLayer) ||
-                anim.GetCurrentAnimatorStateInfo(attackLayer).IsName("Standing Melee Attack Horizontal"))
+                anim.GetCurrentAnimatorStateInfo(attackLayer).IsName("Attack"))
                && Time.time < exitDeadline)
             yield return null;
 
