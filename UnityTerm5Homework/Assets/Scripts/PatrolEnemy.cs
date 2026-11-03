@@ -147,6 +147,7 @@ public class PatrolEnemy : MonoBehaviour
         agent.isStopped = true;
         agent.updateRotation = false;
         anim.SetFloat("Moving", 0f);
+        anim.SetLayerWeight(attackLayer, 1f);
         anim.SetBool("Attack", true);
 
         // Wait for the existing animation state, then let one swing complete.
@@ -172,6 +173,8 @@ public class PatrolEnemy : MonoBehaviour
                && Time.time < exitDeadline)
             yield return null;
 
+        // Let the base layer animate the legs again after the swing.
+        anim.SetLayerWeight(attackLayer, 0f);
         agent.isStopped = previousIsStopped;
         agent.updateRotation = previousUpdateRotation;
         nextAttackTime = Time.time + attackRecovery;
@@ -183,7 +186,11 @@ public class PatrolEnemy : MonoBehaviour
         StopAllCoroutines();
         if (attacking)
         {
-            if (anim != null) anim.SetBool("Attack", false);
+            if (anim != null)
+            {
+                anim.SetBool("Attack", false);
+                if (attackLayer >= 0) anim.SetLayerWeight(attackLayer, 0f);
+            }
             if (agent != null)
             {
                 agent.updateRotation = previousUpdateRotation;
