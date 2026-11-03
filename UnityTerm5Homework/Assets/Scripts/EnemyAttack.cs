@@ -16,13 +16,15 @@ public class EnemyAttack : MonoBehaviour
         {
             if (attackHit.gameObject.CompareTag("Player"))
             {
-                attackHit.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+                PlayerHealth health = attackHit.GetComponentInParent<PlayerHealth>();
+                if (health != null) health.TakeDamage(attackDamage);
             }
         }
     }
 
     private void OnDrawGizmos()
     {
+        if (attackTransform == null) return;
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(attackTransform.position, attackRadius);
     }

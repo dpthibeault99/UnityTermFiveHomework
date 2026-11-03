@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class PatrolEnemy : MonoBehaviour
 {
     NavMeshAgent agent;
@@ -31,17 +32,28 @@ public class PatrolEnemy : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        if (anim == null) anim = GetComponentInChildren<Animator>();
+        if (anim == null || anim.runtimeAnimatorController == null || !agent.isOnNavMesh)
+        {
+            Debug.LogError("Enemy needs an Animator with a controller and a NavMeshAgent on the baked NavMesh.", this);
+            enabled = false;
+            return;
+        }
         attackLayer = anim.GetLayerIndex("Attack");
         patrolling = true;
         lastPosition = transform.position;
+        agent.isStopped = false;
+        SetNextPatrolDestination();
     }
     
     bool CanSeePlayer()
     {
+        if (eye == null || target == null) return false;
         if (Vector3.Distance(eye.position, target.position) < viewDistance)
         {
-            Vector3 playerDirection = (target.position - eye.position).normalized;
-            float angleDifference = Vector3.Angle(eye.forward, playerDirection);
+            // Field of view is horizontal; looking down at a nearby player must not lose them.
+            Vector3 playerDirection = Vector3.ProjectOnPlane(target.position - transform.position, Vector3.up);
+            float angleDifference = Vector3.Angle(Vector3.ProjectOnPlane(eye.forward, Vector3.up), playerDirection);
             if (angleDifference < viewAngle /2)
             {
                 
@@ -60,7 +72,9 @@ public class PatrolEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!agent.isActiveAndEnabled || !agent.isOnNavMesh) return;
         if (attacking) return;
+        anim.SetFloat("Moving", agent.velocity.sqrMagnitude);
         if (agent.pathPending)
         {
             return;
@@ -68,7 +82,7 @@ public class PatrolEnemy : MonoBehaviour
         //Code for patrolling
         if (patrolling)
         {
-            if(agent.remainingDistance < agent.stoppingDistance)
+            if(agent.remainingDistance <= Mathf.Max(agent.stoppingDistance, 0.1f))
             {
                 if (!arrived)
                 {
@@ -90,7 +104,7 @@ public class PatrolEnemy : MonoBehaviour
             // Use player distance, not a path that may still be recalculating.
             Vector3 toPlayer = target.position - transform.position;
             Vector3 facingDirection = Vector3.ProjectOnPlane(toPlayer, Vector3.up);
-            if (!agent.isOnOffMeshLink && toPlayer.magnitude <= agent.stoppingDistance + 0.1f)
+            if (!agent.isOnOffMeshLink && facingDirection.magnitude <= agent.stoppingDistance + 0.1f)
             {
                 if (facingDirection.sqrMagnitude > 0.001f)
                 {
@@ -115,15 +129,14 @@ public class PatrolEnemy : MonoBehaviour
             {
                 anim.SetBool("Attack", false);
                 agent.SetDestination(lastPosition);
-                if(agent.remainingDistance < agent.stoppingDistance)
+                if(agent.remainingDistance <= Mathf.Max(agent.stoppingDistance, 0.1f))
                 {
                     patrolling = true;
+                    arrived = true;
                     StartCoroutine(GoToNextPatrolPoint());
                 }
             }
         }
-        //play move animation
-        anim.SetFloat("Moving", agent.velocity.sqrMagnitude);
     }
 
     IEnumerator AttackOnce()
@@ -184,7 +197,7 @@ public class PatrolEnemy : MonoBehaviour
 
     IEnumerator GoToNextPatrolPoint()
     {
-        if(waypoints.Length == 0)
+        if(waypoints == null || waypoints.Length == 0)
         {
             yield break;
         }
@@ -194,7 +207,19 @@ public class PatrolEnemy : MonoBehaviour
         // A patrol wait must not change the destination during combat.
         if (!patrolling || attacking) yield break;
         arrived = false;
-        agent.destination = waypoints[destination].position;
-        destination = (destination + 1) % waypoints.Length;
+        SetNextPatrolDestination();
+    }
+
+    void SetNextPatrolDestination()
+    {
+        if (waypoints == null || waypoints.Length == 0) return;
+        for (int i = 0; i < waypoints.Length; i++)
+        {
+            Transform waypoint = waypoints[destination];
+            destination = (destination + 1) % waypoints.Length;
+            if (waypoint == null) continue;
+            agent.SetDestination(waypoint.position);
+            return;
+        }
     }
 } 
