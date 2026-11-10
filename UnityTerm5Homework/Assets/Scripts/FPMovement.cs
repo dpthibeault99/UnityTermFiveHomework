@@ -9,15 +9,17 @@ public class FPMovement : MonoBehaviour
 {
     public float speed = 10;
     float h, v;
+    public Vector2 MovementInput => new Vector2(h, v);
+
+    public void ResetVerticalVelocity()
+    {
+        velocity = 0f;
+    }
     public float gravity = -9.8f;
     public float jumpStrength = 9.0f;
     float velocity;
     float gravityMultiplier = 3.0f;
-    public bool canDoubleJump = false;
-    public bool doubleJumpUsed = false;
-    public AudioSource source;
-    public AudioClip[] clips;
-
+    
 
     CharacterController controller;
 
@@ -39,19 +41,12 @@ public class FPMovement : MonoBehaviour
         if(IsGrounded() && velocity < 0)
         {
             velocity = -1;
-            doubleJumpUsed = false;
-      
         }
         else
         {
             velocity += gravity * gravityMultiplier * Time.deltaTime;
         }
 
-        if(canDoubleJump)
-        {
-            Debug.Log("FPMovemnt can jump true");
-
-        }
 
         movement.y = velocity;
 
@@ -66,44 +61,16 @@ public class FPMovement : MonoBehaviour
         v = ctx.ReadValue<Vector2>().y;
     }
 
-    //public void Jump(InputAction.CallbackContext ctx)
-    //{
-
-    //    if (!IsGrounded())
-    //    {
-    //        //doubleJumpUsed = true;
-    //        return;
-    //    }
-
-    //    if (ctx.performed && !doubleJumpUsed)
-    //    {
-    //        velocity = jumpStrength;
-    //    }
-
-    //    if (ctx.performed && canDoubleJump && velocity >=0.1f && !controller.isGrounded /*&&  !IsGrounded*/ )
-    //    {
-    //        velocity += jumpStrength;
-    //        //canDoubleJump = false;
-    //        doubleJumpUsed = true;
-    //    }
-    //}
-
     public void Jump(InputAction.CallbackContext ctx)
     {
-        if (!ctx.performed)return;
-            // i struglled with this for a while
-        
-        if (IsGrounded())
+        if (!enabled || !IsGrounded())
         {
-            velocity = jumpStrength;
-            source.PlayOneShot(clips[0], 0.5f);
+            return;
         }
-        else if (canDoubleJump && !doubleJumpUsed)
+
+        if (ctx.performed)
         {
             velocity = jumpStrength;
-            doubleJumpUsed = true;
-            source.PlayOneShot(clips[1], 0.5f);
-
         }
     }
 

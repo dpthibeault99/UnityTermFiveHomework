@@ -30,7 +30,7 @@ public class ChestScript : MonoBehaviour
                 notification.text = "Double Jumped Unlocked";
                 Debug.Log("cheastScript can jump true");
                 fP = other.GetComponent<FPMovement>(); // the player has FPMovemnt
-                fP.canDoubleJump = true;
+               // fP.canDoubleJump = true;
                 StartCoroutine(resetNotification());
             }
 
