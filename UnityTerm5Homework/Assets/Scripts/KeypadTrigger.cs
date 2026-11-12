@@ -8,6 +8,7 @@ public class KeypadTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
             keyPadUI.GetComponent<KeypadScript>().Open(other.gameObject);
+        Debug.Log("Player is herw");
     }
 
     private void OnTriggerExit(Collider other)
