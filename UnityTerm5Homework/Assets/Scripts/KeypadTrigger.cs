@@ -4,6 +4,7 @@ public class KeypadTrigger : MonoBehaviour
 {
     public GameObject keyPadUI;
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
